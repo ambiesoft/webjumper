@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ambiesoft WebJumber</title>
+</head>
+
+<body>
+    <script>
+        const home = 'http://ambiesoft.moon.com/'
+        let url = new URL(location.href)
+        let target = url.searchParams.get('target')
+        target = target ? target : 'home'
+        let path = ''
+        switch (target) {
+            case 'home':
+                path = 'homepage'
+                break;
+            case 'dicregatehelp':
+                path = 'main/index.php?page=help-4'
+                break;
+            case 'tango':
+                path = 'tango'
+                break;
+        }
+        let newUrl = new URL(path,home)
+        location.href = newUrl
+
+    </script>
+</body>
+
+</html>
