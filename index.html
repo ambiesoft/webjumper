@@ -10,6 +10,7 @@
 
 <body>
     <script>
+        // https://ambiesoft.github.io/webjumper/
         const home = 'http://ambiesoft.mooo.com/'
         let url = new URL(location.href)
         let target = url.searchParams.get('target')
@@ -20,7 +21,7 @@
                 path = 'homepage'
                 break;
             case 'dicregate':
-                path ='main/index.php?page=dicregate'
+                path = 'main/index.php?page=dicregate'
                 break;
             case 'dicregatehelp':
                 path = 'main/index.php?page=help-4'
@@ -28,8 +29,11 @@
             case 'tango':
                 path = 'tango'
                 break;
+            case 'sceneexplorer':
+                path = 'main/index.php?page=sceneexplorer'
+                break;
         }
-        let newUrl = new URL(path,home)
+        let newUrl = new URL(path, home)
         location.href = newUrl
 
     </script>
