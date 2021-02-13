@@ -35,6 +35,10 @@
             case 'donate':
                 path = 'donate'
                 break;
+            case 'larmoji':
+                path = 'main/index.php?page=larmoji'
+                break;
+                
         }
         let newUrl = new URL(path, home)
         location.href = newUrl
