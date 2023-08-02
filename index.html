@@ -15,7 +15,8 @@
         let url = new URL(location.href)
         let target = url.searchParams.get('target')
         target = target ? target : 'home'
-        let path = ''
+        let path = '';
+        let otherurl = '';
         switch (target) {
             case 'argCheck':
                 path = 'homepage/app/argCheck'
@@ -53,6 +54,9 @@
                 break;
             case 'FolderConfig':
                 path = 'homepage/app/FolderConfig'
+                break;
+            case 'kaimonoikura':
+                otherurl = 'https://kaimono.ambiesoft.com/';
                 break;
             case 'kk':
                 path = 'homepage/app/kk'
@@ -101,7 +105,7 @@
                 break;
                 
         }
-        let newUrl = new URL(path, home)
+        let newUrl = otherurl ? new URL(otherurl) : new URL(path, home);
         location.href = newUrl
 
     </script>
