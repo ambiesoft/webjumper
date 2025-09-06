@@ -1,113 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Ambiesoft WebJumber</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        // https://ambiesoft.github.io/webjumper/?target=xxxxx
-        const home = 'https://ambiesoft.com/'
-        let url = new URL(location.href)
-        let target = url.searchParams.get('target')
-        target = target ? target : 'home'
-        let path = '';
-        let otherurl = '';
-        switch (target) {
-            case 'argCheck':
-                path = 'homepage/app/argCheck'
-                break;
-            case 'bbs':
-                path = 'minibbs/minibbs.php'
-                break;
-            case 'clickchecker':
-                path = 'homepage/app/clickchecker'
-                break;
-            case 'clipdiff':
-                path = 'homepage/app/clipdiff'
-                break;
-            case 'ClipimageToFile':
-                path = 'homepage/app/clipimagetofile'
-                break;
-            case 'closeapp':
-                path = 'homepage/app/closeapp'
-                break;
-            case 'cnote':
-                path = 'homepage/app/cnote'
-                break;
-            case 'dicregate':
-                path = 'main/index.php?page=dicregate'
-                break;
-            case 'dicregatehelp':
-                path = 'main/index.php?page=help-4'
-                break;
-            case 'dicregatelicense':
-                path = 'main/index.php?page=license'
-                break;
-            case 'donate':
-                path = 'donate'
-                break;
-            case 'FolderConfig':
-                path = 'homepage/app/FolderConfig'
-                break;
-            case 'kaimonoikura':
-                otherurl = 'https://kaimono.ambiesoft.com/';
-                break;
-            case 'kk':
-                path = 'homepage/app/kk'
-                break;
-            case 'ListeningStudio':
-                path = 'main/index.php?page=listeningstudio'
-                break;
-            case 'magicfile':
-                path = 'homepage/app/magicfile'
-                break;
-            case 'mdview':
-                path = 'main/index.php?page=mdview'
-                break;
-            case 'home':
-                path = 'homepage'
-                break;
-            case 'sceneexplorer':
-                path = 'main/index.php?page=sceneexplorer'
-                break;
-            case 'tango':
-                path = 'tango'
-                break;
-            case 'larmoji':
-                path = 'homepage/app/larmoji'
-                break;
-            case 'retrycopy':
-                path = 'homepage/app/retrycopy'
-                break;
-            case 'showenv':
-                path = 'homepage/app/showenv'
-                break;
-            case 'ShowQL':
-                path = 'homepage/app/ShowQL'
-                break;
-            case 'SimpBrowser':
-                path = 'homepage/app/SimpBrowser'
-                break;
-            case 'sendtotools':
-                path = 'homepage/app/SendToTools'
-                break;
-            case 'uploads':
-                path = 'ffdav/uploads/'
-                break;
-            case 'zmenu':
-                path = 'homepage/app/zmenu'
-                break;
-                
-        }
-        let newUrl = otherurl ? new URL(otherurl) : new URL(path, home);
-        location.href = newUrl
+      // https://ambiesoft.github.io/webjumper/?target=xxxxx
+      const home = 'https://ambiesoft.com/';
+      let url = new URL(location.href);
+      let target = url.searchParams.get('target');
+      target = target ? target : 'home';
+      let path = '';
 
+      // もし他のURLに飛ばしたい場合はこちらを編集
+      let otherurl = 'https://ambiesoft.github.io/webjumper/other.html';
+      switch (target) {
+        case 'argCheck':
+          path = 'homepage/app/argCheck';
+          break;
+        case 'bbs':
+          path = 'minibbs/minibbs.php';
+          break;
+        case 'clickchecker':
+          path = 'homepage/app/clickchecker';
+          break;
+        case 'clipdiff':
+          path = 'homepage/app/clipdiff';
+          break;
+        case 'ClipimageToFile':
+          path = 'homepage/app/clipimagetofile';
+          break;
+        case 'closeapp':
+          path = 'homepage/app/closeapp';
+          break;
+        case 'cnote':
+          path = 'homepage/app/cnote';
+          break;
+        case 'dicregate':
+          path = 'main/index.php?page=dicregate';
+          break;
+        case 'dicregatehelp':
+          path = 'main/index.php?page=help-4';
+          break;
+        case 'dicregatelicense':
+          path = 'main/index.php?page=license';
+          break;
+        case 'donate':
+          path = 'donate';
+          break;
+        case 'FolderConfig':
+          path = 'homepage/app/FolderConfig';
+          break;
+        case 'kaimonoikura':
+          otherurl = 'https://kaimono.ambiesoft.com/';
+          break;
+        case 'kk':
+          path = 'homepage/app/kk';
+          break;
+        case 'ListeningStudio':
+          path = 'main/index.php?page=listeningstudio';
+          break;
+        case 'magicfile':
+          path = 'homepage/app/magicfile';
+          break;
+        case 'mdview':
+          path = 'main/index.php?page=mdview';
+          break;
+        case 'home':
+          path = 'homepage';
+          break;
+        case 'sceneexplorer':
+          path = 'main/index.php?page=sceneexplorer';
+          break;
+        case 'tango':
+          path = 'tango';
+          break;
+        case 'larmoji':
+          path = 'homepage/app/larmoji';
+          break;
+        case 'retrycopy':
+          path = 'homepage/app/retrycopy';
+          break;
+        case 'showenv':
+          path = 'homepage/app/showenv';
+          break;
+        case 'ShowQL':
+          path = 'homepage/app/ShowQL';
+          break;
+        case 'SimpBrowser':
+          path = 'homepage/app/SimpBrowser';
+          break;
+        case 'sendtotools':
+          path = 'homepage/app/SendToTools';
+          break;
+        case 'uploads':
+          path = 'ffdav/uploads/';
+          break;
+        case 'zmenu':
+          path = 'homepage/app/zmenu';
+          break;
+      }
+      let newUrl = otherurl ? new URL(otherurl) : new URL(path, home);
+      location.href = newUrl;
     </script>
-</body>
-
+  </body>
 </html>

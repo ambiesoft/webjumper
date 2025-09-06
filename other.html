@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>一時的にアクセスできません | Ambiesoft</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Ambiesoftは現在一時的にアクセスできません。復旧作業中です。"
+    />
+    <style>
+      :root {
+        --bg: #0b1020; /* ダークでも見やすい落ち着いた色 */
+        --card: #11172a;
+        --text: #e8ecf1;
+        --muted: #a8b3c2;
+        --accent: #7aa2ff;
+        --accent-2: #48d597;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f6f8fb;
+          --card: #ffffff;
+          --text: #111827;
+          --muted: #6b7280;
+          --accent: #2563eb;
+          --accent-2: #059669;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+          Arial, 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic',
+          sans-serif;
+        background: radial-gradient(
+            1200px 800px at 20% 10%,
+            rgba(122, 162, 255, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            800px 600px at 100% 0%,
+            rgba(72, 213, 151, 0.1),
+            transparent 50%
+          ),
+          var(--bg);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      .card {
+        width: min(720px, 100%);
+        background: color-mix(in oklab, var(--card) 92%, transparent);
+        border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(6px);
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      h1 {
+        margin: 10px 0 8px;
+        font-size: clamp(22px, 4vw, 28px);
+      }
+      p {
+        margin: 0.5em 0 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .btn {
+        appearance: none;
+        border: 1px solid color-mix(in oklab, var(--text) 18%, transparent);
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--card) 96%, transparent),
+          color-mix(in oklab, var(--card) 86%, transparent)
+        );
+        color: var(--text);
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.08s ease, box-shadow 0.2s ease,
+          border-color 0.2s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+        border-color: color-mix(in oklab, var(--accent) 40%, transparent);
+      }
+      .btn.primary {
+        border-color: color-mix(in oklab, var(--accent) 50%, transparent);
+      }
+      .note {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 12px;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          'Liberation Mono', monospace;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 6px;
+        background: color-mix(in oklab, var(--text) 10%, transparent);
+        color: var(--text);
+      }
+      .meta {
+        margin-top: 18px;
+        font-size: 13px;
+        color: var(--muted);
+        display: grid;
+        gap: 6px;
+      }
+      .ping {
+        font-variant-numeric: tabular-nums;
+      }
+      footer {
+        margin-top: 22px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main" aria-labelledby="title">
+      <div class="eyebrow">Temporary / 一時的な不通</div>
+      <h1 id="title">Ambiesoft は一時的にアクセスできません</h1>
+      <p>
+        現在、メインのサーバーに問題が発生しているため一時的にアクセスできない状態です。<br />
+        ただいま復旧作業を行っております。ご不便をおかけして申し訳ありません。
+      </p>
+
+      <div class="row">
+        <a class="btn primary" href="#" id="retry">再読み込み</a>
+        <a class="btn" href="https://ambiesoft.com/" id="back"
+          >メインサイトへ（試す）</a
+        >
+        <!-- 連絡先があれば有効化: <a class="btn" href="mailto:{{CONTACT_EMAIL}}">お問い合わせ</a> -->
+      </div>
+
+      <footer></footer>
+    </main>
+
+    <script>
+      // 表示用タイムスタンプ
+      const ts = new Date();
+      document.getElementById('ts').textContent = ts.toLocaleString(
+        navigator.language || 'ja-JP'
+      );
+
+      // 再読み込みボタン
+      document.getElementById('retry').addEventListener('click', function (e) {
+        e.preventDefault();
+        location.reload();
+      });
+
+      // 簡易到達チェック（CORS制限があるので本番URLに HEAD を投げるのではなく、単純遷移を試すのみ）
+      // 成否に関わらずUXを損ねないよう安全側で控えめな表示
+      const statusEl = document.getElementById('status');
+      const mainUrl = document.getElementById('back').getAttribute('href');
+      if (mainUrl && mainUrl !== 'https://ambiesoft.com/') {
+        // 何もしない（テンプレ置換後に必要なら拡張してください）
+      } else {
+        statusEl.textContent =
+          'メインサイトURL（https://ambiesoft.com/）を設定してください。';
+      }
+    </script>
+  </body>
+</html>
